@@ -14,6 +14,7 @@ public class BatColliderFollower : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         guide = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
+        
     }
 
     private void FixedUpdate()
@@ -25,6 +26,7 @@ public class BatColliderFollower : MonoBehaviour
         _velocity = _velocity + guide.velocity;
 
         _rigidbody.velocity = _velocity;
+        transform.localScale = _batFollower.transform.localScale;
         transform.rotation = _batFollower.transform.rotation;
     }
 

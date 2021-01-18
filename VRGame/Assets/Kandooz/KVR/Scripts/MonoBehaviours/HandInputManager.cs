@@ -45,8 +45,8 @@ namespace Kandooz.KVR
             Quaternion rotation;
             device.TryGetFeatureValue(CommonUsages.devicePosition, out position);
             device.TryGetFeatureValue(CommonUsages.deviceRotation, out rotation);
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
+            //this.transform.localPosition = position;
+            //this.transform.localRotation = rotation;
         }
         private void UpdateFingers()
         {
