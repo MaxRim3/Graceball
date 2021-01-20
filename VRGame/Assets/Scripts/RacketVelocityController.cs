@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class BatColliderFollower : MonoBehaviour
+public class RacketVelocityController : MonoBehaviour
 {
     private BatCollider _batGuide;
     public Rigidbody guide;
@@ -17,8 +19,8 @@ public class BatColliderFollower : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         guide = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
         guideTwo = GameObject.FindWithTag("PlayerChild");
-        //this.gameObject.transform.parent = guideTwo.transform;
-        
+        this.gameObject.transform.parent = guideTwo.transform;
+
     }
 
     private void FixedUpdate()
@@ -29,15 +31,12 @@ public class BatColliderFollower : MonoBehaviour
         _velocity = (destination - _rigidbody.transform.position) * _sensitivity;
         _velocity = _velocity + guide.velocity;
 
-        _rigidbody.velocity = _velocity;
-        transform.localScale = _batGuide.transform.localScale;
-        transform.rotation = _batGuide.transform.rotation;
-
         if (colliding)
         {
-            guide.AddForce(-_velocity);
-            print("im colliding");
+            //guide.AddForce(-_velocity);
         }
+
+    
     }
 
     public void SetFollowTarget(BatCollider batGuide)
@@ -65,6 +64,5 @@ public class BatColliderFollower : MonoBehaviour
             colliding = false;
         }
     }
-
 
 }

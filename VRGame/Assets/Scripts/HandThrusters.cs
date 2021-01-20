@@ -12,6 +12,8 @@ public class HandThrusters : MonoBehaviour
     private readonly OVRInput.Axis1D thruster = OVRInput.Axis1D.PrimaryIndexTrigger;
     private readonly OVRInput.Axis1D reverseThruster = OVRInput.Axis1D.PrimaryHandTrigger;
     private readonly OVRInput.Button thumb = OVRInput.Button.One;
+    private readonly OVRInput.RawAxis2D thumbstickL = OVRInput.RawAxis2D.LThumbstick;
+    private readonly OVRInput.RawAxis2D thumbstickR = OVRInput.RawAxis2D.RThumbstick;
     private bool rocketLeftEnabled;
     public AudioSource rocketSoundLeft;
     public ParticleSystem rocketEffectLeft;
@@ -23,6 +25,8 @@ public class HandThrusters : MonoBehaviour
     private readonly float maxVelocity = 20f;
     private readonly float maxUpwardsVelocity = 4f;
 
+    private readonly float torque = 1f;
+
     public void Start()
     {
         //leftHand = GameObject.FindWithTag("LeftCustomHand").GetComponent<Rigidbody>();
@@ -33,20 +37,30 @@ public class HandThrusters : MonoBehaviour
 
     void FixedUpdate()
     {
+        transform.rotation = Quaternion.Euler(0, body.gameObject.transform.eulerAngles.y, 0);
         // Add force based on where the camera is relative to controllers
         Vector3 cameraPosition = primaryCamera.position;
 
          if(OVRInput.Get(thumb, leftController))
         {
             body.velocity = body.velocity * 0.98f;
+            body.angularVelocity = body.angularVelocity * 0.98f;
             print("got press left");
         }
 
         if (OVRInput.Get(thumb, rightController))
         {
             body.velocity = body.velocity * 0.98f;
+            body.angularVelocity = body.angularVelocity * 0.98f;
             print("got press right");
         }
+
+        Vector2 leftThumbstickSwivel = OVRInput.Get(thumbstickL, leftController);
+        Vector2 rightThumbstickSwivel = OVRInput.Get(thumbstickR, rightController);
+        float turn = Input.GetAxis("Horizontal");
+        
+        body.AddTorque(transform.up * torque * leftThumbstickSwivel);
+        body.AddTorque(-transform.up * torque * rightThumbstickSwivel);
 
 
         // Sqrt to convert to linear thrust since exponential is more difficult to control

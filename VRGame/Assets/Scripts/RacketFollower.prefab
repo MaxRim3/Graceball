@@ -170,7 +170,8 @@ GameObject:
   - component: {fileID: 1395110575055623617}
   - component: {fileID: -2103268415081930171}
   - component: {fileID: 6782480520633004717}
-  - component: {fileID: -3414575588532380112}
+  - component: {fileID: -5877306395893060746}
+  - component: {fileID: 5916189917100755539}
   m_Layer: 9
   m_Name: RacketFollower
   m_TagString: Untagged
@@ -230,6 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guide: {fileID: 0}
+  guideTwo: {fileID: 0}
+  colliding: 0
   _sensitivity: 15
 --- !u!65 &6782480520633004717
 BoxCollider:
@@ -238,13 +241,13 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8513858866046510745}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d4592e710fa4b814485cd2d0ad005fac, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-3414575588532380112
+--- !u!54 &-5877306395893060746
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,4 +262,20 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
+--- !u!114 &5916189917100755539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513858866046510745}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a2e9ff0473aed45ab2dc4182fad1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guide: {fileID: 0}
+  guideTwo: {fileID: 0}
+  colliding: 0
+  _sensitivity: 10
