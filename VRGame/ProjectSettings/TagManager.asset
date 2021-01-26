@@ -9,6 +9,7 @@ TagManager:
   - RightCustomHand
   - Wall
   - PlayerChild
+  - Racket
   layers:
   - Default
   - TransparentFX
