@@ -167,12 +167,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4646611314550363274}
-  - component: {fileID: 1395110575055623617}
   - component: {fileID: -2103268415081930171}
   - component: {fileID: 6782480520633004717}
   - component: {fileID: -5877306395893060746}
   - component: {fileID: 5916189917100755539}
-  - component: {fileID: 8753174379881874270}
+  - component: {fileID: -9016698111633258058}
   m_Layer: 9
   m_Name: RacketFollower
   m_TagString: Racket
@@ -196,29 +195,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.47500002, y: -90, z: -7.5740004}
---- !u!114 &1395110575055623617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8513858866046510745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  observableSearch: 0
-  Synchronization: 3
-  OwnershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  viewIdField: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &-2103268415081930171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +256,7 @@ MonoBehaviour:
   guideTwo: {fileID: 0}
   colliding: 0
   _sensitivity: 10
---- !u!114 &8753174379881874270
+--- !u!114 &-9016698111633258058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,10 +265,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8513858866046510745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f7a989a151b6874d94e9e62461479c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 1
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3

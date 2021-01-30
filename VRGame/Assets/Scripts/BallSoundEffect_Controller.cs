@@ -42,7 +42,7 @@ public class BallSoundEffect_Controller : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Goal")
         {
-            AudioClip clip = goalAudioClips[Random.Range(0, goalAudioClips.Length)];
+            AudioClip clip = goalAudioClips[Random.Range(0, goalAudioClips.Length - 1)];
             crowdAudioSource.PlayOneShot(clip);
         }
         else

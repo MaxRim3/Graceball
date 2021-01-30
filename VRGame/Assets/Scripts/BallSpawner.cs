@@ -1,26 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class BallSpawner : MonoBehaviour
+﻿namespace Photon.Pun
 {
-    [SerializeField] GameObject ballPrefab;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
 
-    [SerializeField] GameObject ballSpawnPoint;
-    // Start is called before the first frame update
-    void Start()
-    {
-        spawnBall();
-    }
 
-    // Update is called once per frame
-    void Update()
+    public class BallSpawner : MonoBehaviour
     {
-        
-    }
+        [SerializeField] GameObject ballPrefab;
 
-    public void spawnBall()
-    {
-        GameObject ball = Instantiate(ballPrefab, ballSpawnPoint.transform.position, ballSpawnPoint.transform.rotation) as GameObject;
+        [SerializeField] GameObject ballSpawnPoint;
+        // Start is called before the first frame update
+        void Start()
+        {
+            spawnBall();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void spawnBall()
+        {
+            GameObject ball = PhotonNetwork.Instantiate(ballPrefab.name, ballSpawnPoint.transform.position, ballSpawnPoint.transform.rotation) as GameObject;
+        }
     }
 }

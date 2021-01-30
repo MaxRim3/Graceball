@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class BallController : MonoBehaviour
 {
     public Rigidbody rigidbody;
     public float maximumSpeed = 20;
+    PhotonView pv;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pv = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -33,4 +35,17 @@ public class BallController : MonoBehaviour
             rigidbody.AddForce(-brakeVelocity);  // apply opposing brake force
         }
     }
+
+    public void transferOwnership()
+    {
+        pv.TransferOwnership(PhotonNetwork.LocalPlayer);
+    }
+
+    //public void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Racket")
+    //    {
+    //        pv.TransferOwnership(collision.gameObject.GetComponent<PhotonView>.);
+    //    }
+    //}
 }
