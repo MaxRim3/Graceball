@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4b74418e62ef5b240a44c8c5b720a8cf
+labels:
+- Emissive
+- Floor
+- Lamp
+- Light
+- Material
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

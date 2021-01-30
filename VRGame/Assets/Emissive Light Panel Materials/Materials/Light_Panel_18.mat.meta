@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ca64b1848c6c82445a8585d4f4215449
+labels:
+- Emissive
+- Health
+- Light
+- Material
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

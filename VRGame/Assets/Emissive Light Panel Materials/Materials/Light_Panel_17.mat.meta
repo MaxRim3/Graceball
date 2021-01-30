@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ad78899ab8c158b46a922601be4345c3
+labels:
+- Emissive
+- Floor
+- Light
+- Material
+- Space
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

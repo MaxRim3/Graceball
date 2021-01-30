@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c486b10f6c17b3e45b3f816bbb888d66
+labels:
+- Emissive
+- Exit
+- Lamp
+- Light
+- Material
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

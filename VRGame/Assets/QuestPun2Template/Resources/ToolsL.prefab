@@ -326,8 +326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4c7f65de03ad443ba59af195331cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 2777303377266846525}
-  _batCapsuleFollowerPrefab: {fileID: 0}
+  parent: {fileID: 1538889431066158915}
+  _batCapsuleFollowerPrefab: {fileID: -2103268415081930171, guid: 5be8be68f5f3eda41b9a189304579800,
+    type: 3}
   player: {fileID: 0}
   colliding: 0
   collisionHappened: 0

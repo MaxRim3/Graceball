@@ -5,6 +5,8 @@ using UnityEngine;
 public class BallSoundEffect_Controller : MonoBehaviour
 {
     public AudioClip[] audioClips;
+    public AudioClip[] goalAudioClips;
+    public AudioSource crowdAudioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,11 @@ public class BallSoundEffect_Controller : MonoBehaviour
             {
                 audioSourceSecondary.Play();
             }
+        }
+        else if (collision.gameObject.tag == "Goal")
+        {
+            AudioClip clip = goalAudioClips[Random.Range(0, goalAudioClips.Length)];
+            crowdAudioSource.PlayOneShot(clip);
         }
         else
         {

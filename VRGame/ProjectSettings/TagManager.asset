@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - PlayerChild
   - Racket
+  - Goal
   layers:
   - Default
   - TransparentFX

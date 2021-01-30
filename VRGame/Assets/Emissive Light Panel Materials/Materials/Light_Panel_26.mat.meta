@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 65d83836ebf527b4b9f749c4bf5e79c2
+labels:
+- Emissive
+- Light
+- Material
+- Space
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

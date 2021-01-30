@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f21b5c2d18454e64ab692aa63c63e725
+labels:
+- Emissive
+- Floor
+- Light
+- Material
+- Scifi
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
