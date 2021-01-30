@@ -12363,6 +12363,16 @@ PrefabInstance:
       propertyPath: ObservedComponents.Array.data[1]
       value: 
       objectReference: {fileID: 943005490}
+    - target: {fileID: 8158587751729824955, guid: 6c630a9f794f90b4fb07fae9a789d6be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158587752030237738, guid: 6c630a9f794f90b4fb07fae9a789d6be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c630a9f794f90b4fb07fae9a789d6be, type: 3}
 --- !u!1001 &575230223170724341
