@@ -16,9 +16,7 @@ namespace Networking.Pun2
         [SerializeField] GameObject handLPrefab;
         [SerializeField] GameObject ovrCameraRig;
         [SerializeField] Transform[] spawnPoints;
-        [SerializeField] GameObject ballPrefab;
 
-        public GameObject ballSpawnPoint;
 
         //Tools
         List<GameObject> toolsR;
@@ -71,7 +69,7 @@ namespace Networking.Pun2
                 if (i > 0)
                     toolsL[i].transform.parent.GetComponent<PhotonView>().RPC("DisableTool", RpcTarget.AllBuffered, 1);
             }
-            spawnBall();
+         
         
         }
 
@@ -112,9 +110,5 @@ namespace Networking.Pun2
             SceneManager.LoadScene(0);
         }
 
-        public void spawnBall()
-        {
-            GameObject ball = Instantiate(ballPrefab, ballSpawnPoint.transform.position, ballSpawnPoint.transform.rotation) as GameObject;
-        }
     }
 }
