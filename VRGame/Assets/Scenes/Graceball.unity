@@ -3147,7 +3147,7 @@ PrefabInstance:
     - target: {fileID: 7904195375453429468, guid: 239951d7f3b3d824d9c77e6d1378a78b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.68
+      value: 10.44
       objectReference: {fileID: 0}
     - target: {fileID: 7904195375453429468, guid: 239951d7f3b3d824d9c77e6d1378a78b,
         type: 3}
@@ -6848,6 +6848,7 @@ GameObject:
   - component: {fileID: 943005498}
   - component: {fileID: 943005500}
   - component: {fileID: 943005499}
+  - component: {fileID: 943005501}
   m_Layer: 11
   m_Name: BallParent
   m_TagString: Untagged
@@ -6983,7 +6984,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportIfDistanceGreaterThan: 9
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -6993,9 +6994,9 @@ MonoBehaviour:
     ExtrapolateNumberOfStoredPositions: 1
   m_RotationModel:
     SynchronizeEnabled: 1
-    InterpolateOption: 1
+    InterpolateOption: 2
     InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
+    InterpolateLerpSpeed: 9
   m_ScaleModel:
     SynchronizeEnabled: 1
     InterpolateOption: 0
@@ -7157,6 +7158,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &943005501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943005489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e009aa77380ec4c82dfedeaa29c66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 1
 --- !u!1 &954008452
 GameObject:
   m_ObjectHideFlags: 0
