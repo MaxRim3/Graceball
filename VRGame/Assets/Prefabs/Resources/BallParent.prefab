@@ -17,9 +17,8 @@ GameObject:
   - component: {fileID: 151096278102485911}
   - component: {fileID: 151096278102485905}
   - component: {fileID: 151096278102485910}
-  - component: {fileID: 2288641049873907202}
-  - component: {fileID: 793711145140176295}
-  - component: {fileID: 7656716649451788669}
+  - component: {fileID: -8289275898269692722}
+  - component: {fileID: 6087666155650039895}
   m_Layer: 11
   m_Name: BallParent
   m_TagString: Ball
@@ -273,7 +272,7 @@ MonoBehaviour:
   crowdAudioSource: {fileID: 0}
   audioSource: {fileID: 151096278102485905}
   audioSourceSecondary: {fileID: 151096278354656573}
---- !u!114 &2288641049873907202
+--- !u!114 &-8289275898269692722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,12 +291,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 1
   ObservedComponents:
-  - {fileID: 793711145140176295}
-  - {fileID: 7656716649451788669}
+  - {fileID: 6087666155650039895}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &793711145140176295
+--- !u!114 &6087666155650039895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,39 +311,6 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &7656716649451788669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151096278102485916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 4
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 20
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 2
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 20
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!82 &151096278354656573
 AudioSource:
   m_ObjectHideFlags: 0

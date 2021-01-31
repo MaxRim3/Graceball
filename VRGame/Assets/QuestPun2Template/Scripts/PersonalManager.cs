@@ -120,6 +120,7 @@ namespace Networking.Pun2
         //If disconnected from server, returns to Lobby to reconnect
         public override void OnDisconnected(DisconnectCause cause)
         {
+            print(cause + "THIS IS THE CAUSE");
             base.OnDisconnected(cause);
             SceneManager.LoadScene(0);
         }

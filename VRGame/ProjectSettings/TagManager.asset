@@ -12,6 +12,7 @@ TagManager:
   - Racket
   - Goal
   - Ball
+  - PostProcessing
   layers:
   - Default
   - TransparentFX
