@@ -15,8 +15,8 @@ public class BatColliderFollower : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        guide = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
-        guideTwo = GameObject.FindWithTag("PlayerChild");
+        //guide = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
+        //guideTwo = GameObject.FindWithTag("PlayerChild");
         //this.gameObject.transform.parent = guideTwo.transform;
         
     }

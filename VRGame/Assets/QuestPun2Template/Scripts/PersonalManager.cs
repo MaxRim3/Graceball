@@ -15,6 +15,7 @@ namespace Networking.Pun2
         [SerializeField] GameObject handRPrefab;
         [SerializeField] GameObject handLPrefab;
         [SerializeField] GameObject ovrCameraRig;
+        [SerializeField] GameObject playerRigidbody;
         [SerializeField] Transform[] spawnPoints;
 
 
@@ -39,8 +40,10 @@ namespace Networking.Pun2
 
             if(PhotonNetwork.LocalPlayer.ActorNumber <= spawnPoints.Length)
             {
-                ovrCameraRig.transform.position = spawnPoints[PhotonNetwork.LocalPlayer.ActorNumber - 1].transform.position;
-                ovrCameraRig.transform.rotation = spawnPoints[PhotonNetwork.LocalPlayer.ActorNumber - 1].transform.rotation;
+                playerRigidbody.transform.position = spawnPoints[PhotonNetwork.LocalPlayer.ActorNumber - 1].transform.position;
+                playerRigidbody.transform.rotation = spawnPoints[PhotonNetwork.LocalPlayer.ActorNumber - 1].transform.rotation;
+                //ovrCameraRig.transform.position = spawnPoints[PhotonNetwork.LocalPlayer.ActorNumber - 1].transform.position;
+                //ovrCameraRig.transform.rotation = spawnPoints[PhotonNetwork.LocalPlayer.ActorNumber - 1].transform.rotation;
             }
         }
 
@@ -51,26 +54,37 @@ namespace Networking.Pun2
             obj.GetComponent<SetColor>().SetColorRPC(PhotonNetwork.LocalPlayer.ActorNumber);
             
             //Instantiate right hand
-            obj = (PhotonNetwork.Instantiate(handRPrefab.name, OculusPlayer.instance.rightHand.transform.position, OculusPlayer.instance.rightHand.transform.rotation, 0));
-            for (int i = 0; i < obj.transform.childCount; i++)
+            GameObject objR = (PhotonNetwork.Instantiate(handRPrefab.name, OculusPlayer.instance.rightHand.transform.position, OculusPlayer.instance.rightHand.transform.rotation, 0));
+            for (int i = 0; i < objR.transform.childCount; i++)
             {
-                toolsR.Add(obj.transform.GetChild(i).gameObject);
-                obj.transform.GetComponentInChildren<SetColor>().SetColorRPC(PhotonNetwork.LocalPlayer.ActorNumber);
+                toolsR.Add(objR.transform.GetChild(i).gameObject);
+                objR.transform.GetComponentInChildren<SetColor>().SetColorRPC(PhotonNetwork.LocalPlayer.ActorNumber);
                 if(i > 0)
                     toolsR[i].transform.parent.GetComponent<PhotonView>().RPC("DisableTool", RpcTarget.AllBuffered, 1);
             }
+            playerRigidbody.GetComponent<HandThrusters>().rightHand = objR.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
+            GameObject rightRacketParent = objR.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
+            foreach(Transform child in rightRacketParent.transform)
+            {
+                child.GetComponent<BatCollider>().player = playerRigidbody.gameObject;
+            }
 
             //Instantiate left hand
-            obj = (PhotonNetwork.Instantiate(handLPrefab.name, OculusPlayer.instance.leftHand.transform.position, OculusPlayer.instance.leftHand.transform.rotation, 0));
-            for (int i = 0; i < obj.transform.childCount; i++)
+            GameObject objL = (PhotonNetwork.Instantiate(handLPrefab.name, OculusPlayer.instance.leftHand.transform.position, OculusPlayer.instance.leftHand.transform.rotation, 0));
+            for (int i = 0; i < objL.transform.childCount; i++)
             {
-                toolsL.Add(obj.transform.GetChild(i).gameObject);
-                obj.transform.GetComponentInChildren<SetColor>().SetColorRPC(PhotonNetwork.LocalPlayer.ActorNumber);
+                toolsL.Add(objL.transform.GetChild(i).gameObject);
+                objL.transform.GetComponentInChildren<SetColor>().SetColorRPC(PhotonNetwork.LocalPlayer.ActorNumber);
                 if (i > 0)
                     toolsL[i].transform.parent.GetComponent<PhotonView>().RPC("DisableTool", RpcTarget.AllBuffered, 1);
             }
-         
-        
+            playerRigidbody.GetComponent<HandThrusters>().leftHand = objL.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
+            GameObject leftRacketParent = objL.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
+            foreach (Transform child in rightRacketParent.transform)
+            {
+                child.GetComponent<BatCollider>().player = playerRigidbody.gameObject;
+            }
+
         }
 
         //Detects input from Thumbstick to switch "hand tools"

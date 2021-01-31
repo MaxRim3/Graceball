@@ -31,8 +31,8 @@ public class HandThrusters : MonoBehaviour
     {
         //leftHand = GameObject.FindWithTag("LeftCustomHand").GetComponent<Rigidbody>();
         //rightHand = GameObject.FindWithTag("RightCustomHand").GetComponent<Rigidbody>();
-        leftHand = GameObject.Find("CustomHandLeft").GetComponent<Rigidbody>();
-        rightHand = GameObject.Find("CustomHandRight").GetComponent<Rigidbody>();
+        //leftHand = GameObject.Find("CustomHandLeft").GetComponent<Rigidbody>();
+        //rightHand = GameObject.Find("CustomHandRight").GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()

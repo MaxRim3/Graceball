@@ -16,6 +16,7 @@ public class BatCollider : MonoBehaviour
         follower.transform.position = transform.position;
         follower.SetFollowTarget(this);
         followerObj = follower.gameObject;
+        follower.GetComponent<BatColliderFollower>().guide = player.gameObject.GetComponent<Rigidbody>();
     }
 
     private void Start()
