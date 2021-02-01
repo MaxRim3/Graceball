@@ -17,11 +17,12 @@ public class BatCollider : MonoBehaviour
         follower.SetFollowTarget(this);
         followerObj = follower.gameObject;
         follower.GetComponent<BatColliderFollower>().guide = player.gameObject.GetComponent<Rigidbody>();
+        follower.GetComponent<CollisionControl>().guide = player.gameObject.GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        //player = GameObject.FindWithTag("Player");
         SpawnBatCapsuleFollower();
     }
 
@@ -29,8 +30,8 @@ public class BatCollider : MonoBehaviour
     {
         if (collisionHappened)
         {
-            player.GetComponent<Rigidbody>().AddForce(-followerObj.GetComponent<Rigidbody>().velocity);
-            print("colliding");
+            //player.GetComponent<Rigidbody>().AddForce(-followerObj.GetComponent<Rigidbody>().velocity);
+            //print("colliding");
         }
         //if (colliding && !collisionHappened)
         //{

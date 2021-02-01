@@ -9,6 +9,7 @@ namespace Networking.Pun2
         public GameObject head;
         public GameObject rightHand;
         public GameObject leftHand;
+        public GameObject playerRigidbody;
 
         public static OculusPlayer instance;
 

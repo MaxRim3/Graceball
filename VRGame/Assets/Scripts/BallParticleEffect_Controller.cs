@@ -6,7 +6,8 @@ public class BallParticleEffect_Controller : MonoBehaviour
 {
     public GameObject particleSystemPrefab;
     public bool hit;
-    public GameObject goalEffectPrefab;
+    public GameObject goalRedEffectPrefab;
+    public GameObject goalBlueEffectPrefab;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -19,11 +20,17 @@ public class BallParticleEffect_Controller : MonoBehaviour
             GameObject hitParticle = Instantiate(particleSystemPrefab, contact.point, Quaternion.identity) as GameObject;
             hitParticle.transform.localScale = new Vector3(particleScale / 2, particleScale / 2, particleScale / 2);
         }
-        else if (collision.gameObject.tag == "Goal")
+        else if (collision.gameObject.tag == "BlueGoal")
         {
             //float particleScale = collision.transform.gameObject.GetComponent<Rigidbody>().velocity.x + collision.transform.gameObject.GetComponent<Rigidbody>().velocity.y + collision.transform.gameObject.GetComponent<Rigidbody>().velocity.z;
             ContactPoint contact = collision.contacts[0];
-            GameObject goalParticle = Instantiate(goalEffectPrefab, contact.point, Quaternion.identity) as GameObject;
+            GameObject goalParticle = Instantiate(goalBlueEffectPrefab, contact.point, Quaternion.identity) as GameObject;
+        }
+        else if (collision.gameObject.tag == "RedGoal")
+        {
+            //float particleScale = collision.transform.gameObject.GetComponent<Rigidbody>().velocity.x + collision.transform.gameObject.GetComponent<Rigidbody>().velocity.y + collision.transform.gameObject.GetComponent<Rigidbody>().velocity.z;
+            ContactPoint contact = collision.contacts[0];
+            GameObject goalParticle = Instantiate(goalRedEffectPrefab, contact.point, Quaternion.identity) as GameObject;
         }
 
     }

@@ -13,6 +13,8 @@ TagManager:
   - Goal
   - Ball
   - PostProcessing
+  - RedGoal
+  - BlueGoal
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - Wall
   - BatParent
   - PlayerHandJoint
-  - 
+  - BallTrail
   - 
   - 
   - 

@@ -21,9 +21,9 @@ public class HandThrusters : MonoBehaviour
     public AudioSource rocketSoundRight;
     public ParticleSystem rocketEffectRight;
 
-    private readonly float thrustForce = 5f;
-    private readonly float maxVelocity = 10f;
-    private readonly float maxUpwardsVelocity = 2f;
+    private readonly float thrustForce = 2.5f;
+    private readonly float maxVelocity = 5f;
+    private readonly float maxUpwardsVelocity = 1f;
 
     private readonly float torque = 1f;
 

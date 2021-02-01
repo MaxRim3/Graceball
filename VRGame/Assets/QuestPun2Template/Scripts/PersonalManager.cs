@@ -16,6 +16,7 @@ namespace Networking.Pun2
         [SerializeField] GameObject handLPrefab;
         [SerializeField] GameObject ovrCameraRig;
         [SerializeField] GameObject playerRigidbody;
+        [SerializeField] GameObject playerRigidbodyPrefab;
         [SerializeField] Transform[] spawnPoints;
 
 
@@ -49,6 +50,11 @@ namespace Networking.Pun2
 
         private void Start()
         {
+            //Instantiate Rigibody
+            GameObject objrb = (PhotonNetwork.Instantiate(playerRigidbodyPrefab.name, OculusPlayer.instance.playerRigidbody.transform.position, OculusPlayer.instance.playerRigidbody.transform.rotation, 0));
+            ovrCameraRig.transform.parent = objrb.transform;
+            objrb.GetComponent<HandThrusters>().primaryCamera = ovrCameraRig.transform;
+
             //Instantiate Head
             GameObject obj = (PhotonNetwork.Instantiate(headPrefab.name, OculusPlayer.instance.head.transform.position, OculusPlayer.instance.head.transform.rotation, 0));
             obj.GetComponent<SetColor>().SetColorRPC(PhotonNetwork.LocalPlayer.ActorNumber);
@@ -62,11 +68,11 @@ namespace Networking.Pun2
                 if(i > 0)
                     toolsR[i].transform.parent.GetComponent<PhotonView>().RPC("DisableTool", RpcTarget.AllBuffered, 1);
             }
-            playerRigidbody.GetComponent<HandThrusters>().rightHand = objR.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
+            objrb.GetComponent<HandThrusters>().rightHand = objR.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
             GameObject rightRacketParent = objR.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
             foreach(Transform child in rightRacketParent.transform)
             {
-                child.GetComponent<BatCollider>().player = playerRigidbody.gameObject;
+                child.GetComponent<BatCollider>().player = objrb;
             }
 
             //Instantiate left hand
@@ -78,11 +84,11 @@ namespace Networking.Pun2
                 if (i > 0)
                     toolsL[i].transform.parent.GetComponent<PhotonView>().RPC("DisableTool", RpcTarget.AllBuffered, 1);
             }
-            playerRigidbody.GetComponent<HandThrusters>().leftHand = objL.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
+            objrb.GetComponent<HandThrusters>().leftHand = objL.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
             GameObject leftRacketParent = objL.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
-            foreach (Transform child in rightRacketParent.transform)
+            foreach (Transform child in leftRacketParent.transform)
             {
-                child.GetComponent<BatCollider>().player = playerRigidbody.gameObject;
+                child.GetComponent<BatCollider>().player = objrb;
             }
 
         }

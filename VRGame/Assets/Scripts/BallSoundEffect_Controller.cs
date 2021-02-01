@@ -40,10 +40,10 @@ public class BallSoundEffect_Controller : MonoBehaviour
                 audioSourceSecondary.Play();
             }
         }
-        else if (collision.gameObject.tag == "Goal")
+        else if (collision.gameObject.tag == "RedGoal" || collision.gameObject.tag == "BlueGoal")
         {
-            AudioClip clip = goalAudioClips[Random.Range(1, goalAudioClips.Length)];
-            //crowdAudioSource.PlayOneShot(clip);
+            AudioClip clip = goalAudioClips[Random.Range(0, goalAudioClips.Length)];
+            crowdAudioSource.PlayOneShot(clip);
         }
         else
         {

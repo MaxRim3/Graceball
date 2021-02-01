@@ -19,7 +19,7 @@ public class RacketVelocityController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         guide = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
         guideTwo = GameObject.FindWithTag("PlayerChild");
-        this.gameObject.transform.parent = guideTwo.transform;
+        //this.gameObject.transform.parent = guideTwo.transform;
 
     }
 

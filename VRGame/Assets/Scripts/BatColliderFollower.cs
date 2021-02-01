@@ -33,11 +33,11 @@ public class BatColliderFollower : MonoBehaviour
         transform.localScale = _batGuide.transform.localScale;
         transform.rotation = _batGuide.transform.rotation;
 
-        if (colliding)
-        {
-            guide.AddForce(-_velocity);
-            print("im colliding");
-        }
+        //if (colliding)
+        //{
+        //    guide.AddForce(-_velocity);
+        //    print("im colliding");
+        //}
     }
 
     public void SetFollowTarget(BatCollider batGuide)

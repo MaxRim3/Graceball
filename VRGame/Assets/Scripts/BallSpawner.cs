@@ -10,6 +10,8 @@
         [SerializeField] GameObject ballPrefab;
 
         [SerializeField] GameObject ballSpawnPoint;
+
+        public AudioSource crowdCheerAudioSource;
         // Start is called before the first frame update
         void Start()
         {
@@ -25,6 +27,7 @@
         public void spawnBall()
         {
             GameObject ball = PhotonNetwork.Instantiate(ballPrefab.name, ballSpawnPoint.transform.position, ballSpawnPoint.transform.rotation) as GameObject;
+            ball.GetComponent<BallSoundEffect_Controller>().crowdAudioSource = crowdCheerAudioSource;
         }
     }
 }
