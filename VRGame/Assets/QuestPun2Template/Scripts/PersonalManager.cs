@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Sigtrap.VrTunnellingPro;
 //
 //For handling local objects and sending data over the network
 //
@@ -18,6 +19,7 @@ namespace Networking.Pun2
         [SerializeField] GameObject playerRigidbody;
         [SerializeField] GameObject playerRigidbodyPrefab;
         [SerializeField] Transform[] spawnPoints;
+        [SerializeField] GameObject mainCamera;
 
 
         //Tools
@@ -52,6 +54,7 @@ namespace Networking.Pun2
         {
             //Instantiate Rigibody
             GameObject objrb = (PhotonNetwork.Instantiate(playerRigidbodyPrefab.name, OculusPlayer.instance.playerRigidbody.transform.position, OculusPlayer.instance.playerRigidbody.transform.rotation, 0));
+            //mainCamera.GetComponent<TunnellingMobile>().motionTarget = objrb.transform;
             ovrCameraRig.transform.parent = objrb.transform;
             objrb.GetComponent<HandThrusters>().primaryCamera = ovrCameraRig.transform;
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 99474554890004967}
   - component: {fileID: 99474554890004966}
   - component: {fileID: -157064950595881975}
+  - component: {fileID: -6535864004975058231}
   m_Layer: 10
   m_Name: NoOVR_Rigidbody
   m_TagString: Player
@@ -125,3 +126,24 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-6535864004975058231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99474554890004987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ce84320d4420a4584a8357ce8489c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ppProfile: {fileID: 11400000, guid: 0d848ef6f641fcc4d911688530d190e9, type: 2}
+  v: {fileID: 0}
+  dof: {fileID: 0}
+  dofAmount: 0
+  min: 0
+  max: 0
+  velocity: 0
+  normalizedVelocity: 0
+  blur: 0

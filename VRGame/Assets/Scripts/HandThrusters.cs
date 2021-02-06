@@ -58,9 +58,35 @@ public class HandThrusters : MonoBehaviour
         Vector2 leftThumbstickSwivel = OVRInput.Get(thumbstickL, leftController);
         Vector2 rightThumbstickSwivel = OVRInput.Get(thumbstickR, rightController);
         float turn = Input.GetAxis("Horizontal");
-        
-        body.AddTorque(transform.up * torque * leftThumbstickSwivel);
-        body.AddTorque(-transform.up * torque * rightThumbstickSwivel);
+
+        //body.AddTorque(transform.up * torque * leftThumbstickSwivel);
+        //body.AddTorque(-transform.up * torque * rightThumbstickSwivel);
+        if (leftThumbstickSwivel.x < 0)
+        {
+            body.transform.eulerAngles = body.transform.eulerAngles + new Vector3(0, -leftThumbstickSwivel.magnitude, 0);
+            GetComponent<PostProcessingController>().dofAmount = 0;
+        }
+        else if (leftThumbstickSwivel.x > 0)
+        {
+            body.transform.eulerAngles = body.transform.eulerAngles + new Vector3(0, leftThumbstickSwivel.magnitude, 0);
+            GetComponent<PostProcessingController>().dofAmount = 0;
+        }
+
+        if (rightThumbstickSwivel.x < 0)
+        {
+            body.transform.eulerAngles = body.transform.eulerAngles + new Vector3(0, -rightThumbstickSwivel.magnitude, 0);
+            GetComponent<PostProcessingController>().dofAmount = 0;
+        }
+        else if (rightThumbstickSwivel.x > 0)
+        {
+            body.transform.eulerAngles = body.transform.eulerAngles + new Vector3(0, rightThumbstickSwivel.magnitude, 0);
+            GetComponent<PostProcessingController>().dofAmount = 0;
+        }
+        if (leftThumbstickSwivel.x == 0 && rightThumbstickSwivel.x == 0)
+        {
+            GetComponent<PostProcessingController>().dofAmount = 10;
+        }
+
 
 
         // Sqrt to convert to linear thrust since exponential is more difficult to control
@@ -71,7 +97,7 @@ public class HandThrusters : MonoBehaviour
             {
                 rocketLeftEnabled = true;
                 rocketSoundLeft.Play(0);
-                rocketEffectLeft.Play(true);
+                //rocketEffectLeft.Play(true);
             }
             OVRInput.SetControllerVibration(0, leftPressure / 6, leftController);
             rocketSoundLeft.volume = leftPressure / 2;
@@ -86,7 +112,7 @@ public class HandThrusters : MonoBehaviour
         {
             rocketLeftEnabled = false;
             rocketSoundLeft.Pause();
-            rocketEffectLeft.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            //rocketEffectLeft.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             OVRInput.SetControllerVibration(0, 0, leftController);
         }
 
@@ -98,7 +124,7 @@ public class HandThrusters : MonoBehaviour
             {
                 rocketRightEnabled = true;
                 rocketSoundRight.Play(0);
-                rocketEffectRight.Play(true);
+                //rocketEffectRight.Play(true);
             }
             OVRInput.SetControllerVibration(1, rightPressure / 6, rightController);
             rocketSoundRight.volume = rightPressure / 2;
@@ -113,7 +139,7 @@ public class HandThrusters : MonoBehaviour
         {
             rocketRightEnabled = false;
             rocketSoundRight.Pause();
-            rocketEffectRight.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            //rocketEffectRight.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             OVRInput.SetControllerVibration(0, 0, rightController);
         }
 
@@ -127,7 +153,7 @@ public class HandThrusters : MonoBehaviour
             {
                 rocketLeftEnabled = true;
                 rocketSoundLeft.Play(0);
-                rocketEffectLeft.Play(true);
+                //rocketEffectLeft.Play(true);
             }
             OVRInput.SetControllerVibration(0, leftPressure / 6, leftController);
             rocketSoundLeft.volume = leftPressureR / 2;
@@ -142,7 +168,7 @@ public class HandThrusters : MonoBehaviour
         {
             rocketLeftEnabled = false;
             rocketSoundLeft.Pause();
-            rocketEffectLeft.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            //rocketEffectLeft.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             OVRInput.SetControllerVibration(0, 0, leftController);
         }
 
@@ -154,7 +180,7 @@ public class HandThrusters : MonoBehaviour
             {
                 rocketRightEnabled = true;
                 rocketSoundRight.Play(0);
-                rocketEffectRight.Play(true);
+                //rocketEffectRight.Play(true);
             }
             OVRInput.SetControllerVibration(1, rightPressureR / 6, rightController);
             rocketSoundRight.volume = rightPressure / 2;
@@ -169,7 +195,7 @@ public class HandThrusters : MonoBehaviour
         {
             rocketRightEnabled = false;
             rocketSoundRight.Pause();
-            rocketEffectRight.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            //rocketEffectRight.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             OVRInput.SetControllerVibration(0, 0, rightController);
         }
 
