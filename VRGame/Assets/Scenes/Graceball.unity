@@ -8480,7 +8480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &524613679
 Transform:
   m_ObjectHideFlags: 0
@@ -19289,6 +19289,11 @@ MonoBehaviour:
   - {fileID: 790967183}
   - {fileID: 1920002354}
   mainCamera: {fileID: 1519162848}
+  rigidbodyObj: {fileID: 0}
+  leftHandObj: {fileID: 0}
+  rightHandObj: {fileID: 0}
+  leftRacket: {fileID: 0}
+  rightRacket: {fileID: 0}
 --- !u!4 &1310519770
 Transform:
   m_ObjectHideFlags: 0
@@ -30014,7 +30019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &2028096551
 Rigidbody:
   m_ObjectHideFlags: 0

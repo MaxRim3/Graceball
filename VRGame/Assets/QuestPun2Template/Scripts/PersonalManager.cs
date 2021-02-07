@@ -58,6 +58,7 @@ namespace Networking.Pun2
 
         private void Start()
         {
+            print("Running Personal Manager Start");
             //Instantiate Rigibody
             GameObject objrb = (PhotonNetwork.Instantiate(playerRigidbodyPrefab.name, OculusPlayer.instance.playerRigidbody.transform.position, OculusPlayer.instance.playerRigidbody.transform.rotation, 0));
             //mainCamera.GetComponent<TunnellingMobile>().motionTarget = objrb.transform;
