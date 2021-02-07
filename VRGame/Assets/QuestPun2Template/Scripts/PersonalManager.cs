@@ -28,6 +28,12 @@ namespace Networking.Pun2
         int currentToolR;
         int currentToolL;
 
+        public GameObject rigidbodyObj;
+        public GameObject leftHandObj;
+        public GameObject rightHandObj;
+        public GameObject leftRacket;
+        public GameObject rightRacket;
+
         private void Awake()
         {
             /// If the game starts in Room scene, and is not connected, sends the player back to Lobby scene to connect first.
@@ -57,6 +63,7 @@ namespace Networking.Pun2
             //mainCamera.GetComponent<TunnellingMobile>().motionTarget = objrb.transform;
             ovrCameraRig.transform.parent = objrb.transform;
             objrb.GetComponent<HandThrusters>().primaryCamera = ovrCameraRig.transform;
+            rigidbodyObj = objrb;
 
             //Instantiate Head
             GameObject obj = (PhotonNetwork.Instantiate(headPrefab.name, OculusPlayer.instance.head.transform.position, OculusPlayer.instance.head.transform.rotation, 0));
@@ -64,6 +71,7 @@ namespace Networking.Pun2
             
             //Instantiate right hand
             GameObject objR = (PhotonNetwork.Instantiate(handRPrefab.name, OculusPlayer.instance.rightHand.transform.position, OculusPlayer.instance.rightHand.transform.rotation, 0));
+            rightHandObj = objR;
             for (int i = 0; i < objR.transform.childCount; i++)
             {
                 toolsR.Add(objR.transform.GetChild(i).gameObject);
@@ -73,6 +81,7 @@ namespace Networking.Pun2
             }
             objrb.GetComponent<HandThrusters>().rightHand = objR.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
             GameObject rightRacketParent = objR.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
+            rightRacket = rightRacketParent;
             foreach(Transform child in rightRacketParent.transform)
             {
                 child.GetComponent<BatCollider>().player = objrb;
@@ -80,6 +89,7 @@ namespace Networking.Pun2
 
             //Instantiate left hand
             GameObject objL = (PhotonNetwork.Instantiate(handLPrefab.name, OculusPlayer.instance.leftHand.transform.position, OculusPlayer.instance.leftHand.transform.rotation, 0));
+            leftHandObj = objL;
             for (int i = 0; i < objL.transform.childCount; i++)
             {
                 toolsL.Add(objL.transform.GetChild(i).gameObject);
@@ -89,6 +99,7 @@ namespace Networking.Pun2
             }
             objrb.GetComponent<HandThrusters>().leftHand = objL.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
             GameObject leftRacketParent = objL.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
+            leftRacket = leftRacketParent;
             foreach (Transform child in leftRacketParent.transform)
             {
                 child.GetComponent<BatCollider>().player = objrb;
