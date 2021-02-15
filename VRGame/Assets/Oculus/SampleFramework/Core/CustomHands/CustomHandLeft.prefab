@@ -712,7 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  m_parentHeldObject: 0
+  m_parentHeldObject: 1
   m_moveHandPosition: 0
   m_gripTransform: {fileID: 479836}
   m_grabVolumes:

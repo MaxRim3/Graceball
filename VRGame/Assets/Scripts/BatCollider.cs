@@ -9,15 +9,17 @@ public class BatCollider : MonoBehaviour
     public bool colliding;
     public bool collisionHappened;
     public GameObject followerObj;
+    public GameObject follower;
 
     private void SpawnBatCapsuleFollower()
     {
-        var follower = Instantiate(_batCapsuleFollowerPrefab);
+        //var follower = Instantiate(_batCapsuleFollowerPrefab);
         follower.transform.position = transform.position;
-        follower.SetFollowTarget(this);
+        follower.GetComponent<BatColliderFollower>().SetFollowTarget(this);
         followerObj = follower.gameObject;
-        follower.GetComponent<BatColliderFollower>().guide = player.gameObject.GetComponent<Rigidbody>();
-        follower.GetComponent<CollisionControl>().guide = player.gameObject.GetComponent<Rigidbody>();
+        follower.GetComponent<BatColliderFollower>()._batGuide = this.gameObject.GetComponent<BatCollider>();
+        //follower.GetComponent<BatColliderFollower>().guide = player.gameObject.GetComponent<Rigidbody>();
+        //follower.GetComponent<CollisionControl>().guide = player.gameObject.GetComponent<Rigidbody>();
     }
 
     private void Start()

@@ -45,6 +45,7 @@ MonoBehaviour:
   colliding: 0
   collisionHappened: 0
   followerObj: {fileID: 0}
+  follower: {fileID: 0}
 --- !u!65 &5424708811236231543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,6 +124,7 @@ MonoBehaviour:
   colliding: 0
   collisionHappened: 0
   followerObj: {fileID: 0}
+  follower: {fileID: 0}
 --- !u!1 &2777303377266846524
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +239,7 @@ MonoBehaviour:
   colliding: 0
   collisionHappened: 0
   followerObj: {fileID: 0}
+  follower: {fileID: 0}
 --- !u!65 &5688607249130412805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -269,6 +272,7 @@ MonoBehaviour:
   colliding: 0
   collisionHappened: 0
   followerObj: {fileID: 0}
+  follower: {fileID: 0}
 --- !u!65 &3681961475957875259
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -301,6 +305,7 @@ MonoBehaviour:
   colliding: 0
   collisionHappened: 0
   followerObj: {fileID: 0}
+  follower: {fileID: 0}
 --- !u!65 &6326442734374702628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -441,6 +446,7 @@ MonoBehaviour:
   colliding: 0
   collisionHappened: 0
   followerObj: {fileID: 0}
+  follower: {fileID: 0}
 --- !u!1001 &471123499245803901
 PrefabInstance:
   m_ObjectHideFlags: 0

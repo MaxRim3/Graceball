@@ -2,7 +2,7 @@
 
 public class BatColliderFollower : MonoBehaviour
 {
-    private BatCollider _batGuide;
+    public BatCollider _batGuide;
     public Rigidbody guide;
     public GameObject guideTwo;
     private Rigidbody _rigidbody;

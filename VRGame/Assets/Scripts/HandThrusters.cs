@@ -37,6 +37,7 @@ public class HandThrusters : MonoBehaviour
 
     void FixedUpdate()
     {
+        print(body.velocity);
         transform.rotation = Quaternion.Euler(0, body.gameObject.transform.eulerAngles.y, 0);
         // Add force based on where the camera is relative to controllers
         Vector3 cameraPosition = primaryCamera.position;

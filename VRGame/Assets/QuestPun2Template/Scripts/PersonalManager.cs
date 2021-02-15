@@ -28,6 +28,7 @@ namespace Networking.Pun2
         int currentToolR;
         int currentToolL;
 
+        public GameObject[] rackets;
         public GameObject rigidbodyObj;
         public GameObject leftHandObj;
         public GameObject rightHandObj;
@@ -58,13 +59,14 @@ namespace Networking.Pun2
 
         private void Start()
         {
+            int r = 0;
             print("Running Personal Manager Start");
             //Instantiate Rigibody
-            GameObject objrb = (PhotonNetwork.Instantiate(playerRigidbodyPrefab.name, OculusPlayer.instance.playerRigidbody.transform.position, OculusPlayer.instance.playerRigidbody.transform.rotation, 0));
+            //GameObject objrb = (PhotonNetwork.Instantiate(playerRigidbodyPrefab.name, OculusPlayer.instance.playerRigidbody.transform.position, OculusPlayer.instance.playerRigidbody.transform.rotation, 0));
             //mainCamera.GetComponent<TunnellingMobile>().motionTarget = objrb.transform;
-            ovrCameraRig.transform.parent = objrb.transform;
-            objrb.GetComponent<HandThrusters>().primaryCamera = ovrCameraRig.transform;
-            rigidbodyObj = objrb;
+            //ovrCameraRig.transform.parent = objrb.transform;
+            //objrb.GetComponent<HandThrusters>().primaryCamera = ovrCameraRig.transform;
+            //rigidbodyObj = objrb;
 
             //Instantiate Head
             GameObject obj = (PhotonNetwork.Instantiate(headPrefab.name, OculusPlayer.instance.head.transform.position, OculusPlayer.instance.head.transform.rotation, 0));
@@ -72,8 +74,8 @@ namespace Networking.Pun2
             
             //Instantiate right hand
             GameObject objR = (PhotonNetwork.Instantiate(handRPrefab.name, OculusPlayer.instance.rightHand.transform.position, OculusPlayer.instance.rightHand.transform.rotation, 0));
-            rightHandObj = objR;
-            OculusPlayer.instance.rightHandPrefab = objR;
+            //rightHandObj = objR;
+            //OculusPlayer.instance.rightHandPrefab = objR;
             for (int i = 0; i < objR.transform.childCount; i++)
             {
                 toolsR.Add(objR.transform.GetChild(i).gameObject);
@@ -81,18 +83,19 @@ namespace Networking.Pun2
                 if(i > 0)
                     toolsR[i].transform.parent.GetComponent<PhotonView>().RPC("DisableTool", RpcTarget.AllBuffered, 1);
             }
-            objrb.GetComponent<HandThrusters>().rightHand = objR.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
-            GameObject rightRacketParent = OculusPlayer.instance.rightHandPrefab.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
+            playerRigidbody.GetComponent<HandThrusters>().rightHand = objR.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
+            GameObject rightRacketParent = objR.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
             rightRacket = rightRacketParent;
             foreach(Transform child in rightRacketParent.transform)
             {
-                child.GetComponent<BatCollider>().player = objrb;
+                child.GetComponent<BatCollider>().follower = rackets[r];
+                r++;
             }
 
             //Instantiate left hand
             GameObject objL = (PhotonNetwork.Instantiate(handLPrefab.name, OculusPlayer.instance.leftHand.transform.position, OculusPlayer.instance.leftHand.transform.rotation, 0));
-            leftHandObj = objL;
-            OculusPlayer.instance.leftHandPrefab = objL;
+            //leftHandObj = objL;
+            //OculusPlayer.instance.leftHandPrefab = objL;
             for (int i = 0; i < objL.transform.childCount; i++)
             {
                 toolsL.Add(objL.transform.GetChild(i).gameObject);
@@ -100,12 +103,14 @@ namespace Networking.Pun2
                 if (i > 0)
                     toolsL[i].transform.parent.GetComponent<PhotonView>().RPC("DisableTool", RpcTarget.AllBuffered, 1);
             }
-            objrb.GetComponent<HandThrusters>().leftHand = objL.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
-            GameObject leftRacketParent = OculusPlayer.instance.leftHandPrefab.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
+            playerRigidbody.GetComponent<HandThrusters>().leftHand = objL.gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Rigidbody>();
+            GameObject leftRacketParent = objL.gameObject.transform.GetChild(0).transform.GetChild(1).gameObject;
+            
             leftRacket = leftRacketParent;
             foreach (Transform child in leftRacketParent.transform)
             {
-                child.GetComponent<BatCollider>().player = objrb;
+                child.GetComponent<BatCollider>().follower = rackets[r];
+                r++;
             }
 
         }

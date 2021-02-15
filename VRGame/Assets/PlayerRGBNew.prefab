@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5748127129781483176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5748127129781483191}
+  - component: {fileID: 5748127129781483190}
+  - component: {fileID: 5748127129781483177}
+  - component: {fileID: 5748127129781483188}
+  - component: {fileID: 5748127129781483189}
+  - component: {fileID: 7777688996354899354}
+  m_Layer: 10
+  m_Name: PlayerRGBNew
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5748127129781483191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748127129781483176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.38, z: -7.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &5748127129781483190
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748127129781483176}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.2
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &5748127129781483177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748127129781483176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97453d35accfaea4abd41b86c5ed5a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryCamera: {fileID: 0}
+  body: {fileID: 5748127129781483190}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  leftController: 1
+  rightController: 2
+  rocketSoundLeft: {fileID: 1773341598702368967, guid: 06db1830cb4b54a4189629d4b6fb84a6,
+    type: 3}
+  rocketEffectLeft: {fileID: 8173480262489620613, guid: 05f6ac94ed7df4145ab0a2579207ef4e,
+    type: 3}
+  rocketSoundRight: {fileID: 1773341598702368967, guid: 06db1830cb4b54a4189629d4b6fb84a6,
+    type: 3}
+  rocketEffectRight: {fileID: 8173480262489620613, guid: 05f6ac94ed7df4145ab0a2579207ef4e,
+    type: 3}
+--- !u!136 &5748127129781483188
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748127129781483176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5748127129781483189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748127129781483176}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be474df34056e9a408bb9582c3575545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7777688996354899354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748127129781483176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ce84320d4420a4584a8357ce8489c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ppProfile: {fileID: 11400000, guid: 0d848ef6f641fcc4d911688530d190e9, type: 2}
+  v: {fileID: 0}
+  dof: {fileID: 0}
+  dofAmount: 0
+  min: 0
+  max: 0
+  velocity: 0
+  normalizedVelocity: 0
+  blur: 0
