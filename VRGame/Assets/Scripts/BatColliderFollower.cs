@@ -15,6 +15,7 @@ public class BatColliderFollower : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _batGuide.GetComponent<BatCollider>().follower = this.gameObject;
         //guide = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
         //guideTwo = GameObject.FindWithTag("PlayerChild");
         //this.gameObject.transform.parent = guideTwo.transform;
@@ -23,6 +24,7 @@ public class BatColliderFollower : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         Vector3 destination = _batGuide.transform.position;
         _rigidbody.transform.rotation = transform.rotation;
 
