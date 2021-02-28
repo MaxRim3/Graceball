@@ -16,7 +16,7 @@
         public OVRInput.Controller leftController;
         public OVRInput.Controller rightController;
         public bool ballJustSpawned = false;
-        public GameObject[] balls;
+        public List<GameObject> balls = new List<GameObject>();
 
         public AudioSource crowdCheerAudioSource;
         // Start is called before the first frame update
@@ -64,17 +64,18 @@
         {
             GameObject ball = PhotonNetwork.Instantiate(ballPrefab.name, ballSpawnPoint.transform.position, ballSpawnPoint.transform.rotation) as GameObject;
             ball.GetComponent<BallSoundEffect_Controller>().crowdAudioSource = crowdCheerAudioSource;
+            balls.Add(ball);
             yield return new WaitForSeconds(5);
             ballJustSpawned = false;
         }
 
         public void clearBalls()
         {
-            
-            balls = GameObject.FindGameObjectsWithTag("Respawn");
-            for (int i = 0; i < balls.Length - 1; i++)
+        
+            for (int i = 0; i < balls.Count; i++)
             {
-                Destroy(balls[i].gameObject);
+                Destroy(balls[i]);
+                balls.Clear();
             }
         }
 
