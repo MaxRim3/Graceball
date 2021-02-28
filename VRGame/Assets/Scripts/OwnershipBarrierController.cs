@@ -23,13 +23,15 @@ public class OwnershipBarrierController : MonoBehaviour
         if (collider.gameObject.tag == "Ball")
         {
             //collider.gameObject.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.);
-            for (int i = 0; i < PhotonNetwork.CurrentRoom.PlayerCount; i++)
+            for (int i = 1; i < PhotonNetwork.CurrentRoom.PlayerCount; i++)
             {
                 print(PhotonNetwork.CurrentRoom.GetPlayer(i) + "is player");
                 print(i + "is index");
-                if (collider.gameObject.GetComponent<PhotonView>().Owner != PhotonNetwork.CurrentRoom.GetPlayer(i + 1))
+                if (collider.gameObject.GetComponent<PhotonView>().Owner != PhotonNetwork.CurrentRoom.GetPlayer(i))
                 {
-                    collider.gameObject.GetComponent <PhotonView>().TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(i + 1));
+                    print("TRANSFER");
+                    collider.gameObject.GetComponent <PhotonView>().TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(i));
+
                 }
             }
         }

@@ -74,7 +74,7 @@
         
             for (int i = 0; i < balls.Count; i++)
             {
-                Destroy(balls[i]);
+                PhotonNetwork.Destroy(balls[i]);
                 balls.Clear();
             }
         }
