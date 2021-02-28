@@ -15,7 +15,7 @@ public class BatColliderFollower : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _batGuide.GetComponent<BatCollider>().follower = this.gameObject;
+       // _batGuide.GetComponent<BatCollider>().follower = this.gameObject;
         //guide = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
         //guideTwo = GameObject.FindWithTag("PlayerChild");
         //this.gameObject.transform.parent = guideTwo.transform;
@@ -24,22 +24,28 @@ public class BatColliderFollower : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_batGuide != null)
+        {
+            Vector3 destination = _batGuide.transform.position;
+            _rigidbody.transform.rotation = transform.rotation;
 
-        Vector3 destination = _batGuide.transform.position;
-        _rigidbody.transform.rotation = transform.rotation;
+            _velocity = (destination - _rigidbody.transform.position) * _sensitivity;
+            _velocity = _velocity + guide.velocity;
 
-        _velocity = (destination - _rigidbody.transform.position) * _sensitivity;
-        _velocity = _velocity + guide.velocity;
+            _rigidbody.velocity = _velocity;
+            transform.localScale = _batGuide.transform.lossyScale + _batGuide.transform.lossyScale;
+            transform.rotation = _batGuide.transform.rotation;
 
-        _rigidbody.velocity = _velocity;
-        transform.localScale = _batGuide.transform.localScale;
-        transform.rotation = _batGuide.transform.rotation;
-
-        //if (colliding)
-        //{
-        //    guide.AddForce(-_velocity);
-        //    print("im colliding");
-        //}
+            //if (colliding)
+            //{
+            //    guide.AddForce(-_velocity);
+            //    print("im colliding");
+            //}
+        }
+        else
+        {
+            print("_batGuide is null on object" + this.gameObject.name);
+        }
     }
 
     public void SetFollowTarget(BatCollider batGuide)
