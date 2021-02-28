@@ -3,6 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using System.Collections;
 
 
     public class BallSpawner : MonoBehaviour
@@ -10,10 +11,12 @@
         [SerializeField] GameObject ballPrefab;
 
         [SerializeField] GameObject ballSpawnPoint;
+        private readonly OVRInput.Button thumbOne = OVRInput.Button.One;
         private readonly OVRInput.Button thumbTwo = OVRInput.Button.Two;
         public OVRInput.Controller leftController;
         public OVRInput.Controller rightController;
         public bool ballJustSpawned = false;
+        public GameObject[] balls;
 
         public AudioSource crowdCheerAudioSource;
         // Start is called before the first frame update
@@ -43,7 +46,19 @@
                     ballJustSpawned = true;
                 }
             }
+
+            if (OVRInput.Get(thumbOne, leftController))
+            {
+                clearBalls();
+            }
+
+            if (OVRInput.Get(thumbOne, rightController))
+            {
+
+                clearBalls();
+            }
         }
+    
 
         public IEnumerator spawnBall()
         {
@@ -52,5 +67,17 @@
             yield return new WaitForSeconds(5);
             ballJustSpawned = false;
         }
+
+        public void clearBalls()
+        {
+            
+            balls = GameObject.FindGameObjectsWithTag("Respawn");
+            for (int i = 0; i < balls.Length; i++)
+            {
+                Destroy(balls[i].gameObject);
+            }
+        }
+
+
     }
 }
