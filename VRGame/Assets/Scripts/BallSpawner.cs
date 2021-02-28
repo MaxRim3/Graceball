@@ -22,7 +22,7 @@
         // Start is called before the first frame update
         void Start()
         {
-            StartCoroutine(spawnBall());
+            //StartCoroutine(spawnBall());
         }
 
         // Update is called once per frame
@@ -72,7 +72,7 @@
         {
             
             balls = GameObject.FindGameObjectsWithTag("Respawn");
-            for (int i = 0; i < balls.Length; i++)
+            for (int i = 0; i < balls.Length - 1; i++)
             {
                 Destroy(balls[i].gameObject);
             }

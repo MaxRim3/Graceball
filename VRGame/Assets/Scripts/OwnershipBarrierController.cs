@@ -19,11 +19,14 @@ public class OwnershipBarrierController : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
+        print(PhotonNetwork.CurrentRoom.PlayerCount);
         if (collider.gameObject.tag == "Ball")
         {
             //collider.gameObject.GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.);
-            for (int i = 0; i < PhotonNetwork.CurrentRoom.PlayerCount - 1; i++)
+            for (int i = 0; i < PhotonNetwork.CurrentRoom.PlayerCount; i++)
             {
+                print(PhotonNetwork.CurrentRoom.GetPlayer(i) + "is player");
+                print(i + "is index");
                 if (collider.gameObject.GetComponent<PhotonView>().Owner != PhotonNetwork.CurrentRoom.GetPlayer(i))
                 {
                     collider.gameObject.GetComponent <PhotonView>().TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(i));
