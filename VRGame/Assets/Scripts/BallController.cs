@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transferOwnership();
+        //transferOwnership();
         float speed = Vector3.Magnitude(rigidbody.velocity);  // test current object speed
 
         if (speed > maximumSpeed)
