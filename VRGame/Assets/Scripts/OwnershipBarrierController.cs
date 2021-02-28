@@ -27,9 +27,9 @@ public class OwnershipBarrierController : MonoBehaviour
             {
                 print(PhotonNetwork.CurrentRoom.GetPlayer(i) + "is player");
                 print(i + "is index");
-                if (collider.gameObject.GetComponent<PhotonView>().Owner != PhotonNetwork.CurrentRoom.GetPlayer(i))
+                if (collider.gameObject.GetComponent<PhotonView>().Owner != PhotonNetwork.CurrentRoom.GetPlayer(i + 1))
                 {
-                    collider.gameObject.GetComponent <PhotonView>().TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(i));
+                    collider.gameObject.GetComponent <PhotonView>().TransferOwnership(PhotonNetwork.CurrentRoom.GetPlayer(i + 1));
                 }
             }
         }
