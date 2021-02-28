@@ -1666,7 +1666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &58121697
 Transform:
   m_ObjectHideFlags: 0
@@ -2027,6 +2027,10 @@ PrefabInstance:
     - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
@@ -3303,7 +3307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &149879808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3313,7 +3317,7 @@ BoxCollider:
   m_GameObject: {fileID: 149879806}
   m_Material: {fileID: 13400000, guid: f2a4fab624ff9bb41a827a3253b66718, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7853,6 +7857,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -9414,6 +9422,10 @@ PrefabInstance:
     - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
@@ -12162,6 +12174,10 @@ PrefabInstance:
     - target: {fileID: 1165945658302040, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Greeble_Panel_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165945658302040, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4632786278472936, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
       propertyPath: m_RootOrder
@@ -15728,6 +15744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -17879,7 +17899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1143841974
 Transform:
   m_ObjectHideFlags: 0
@@ -18096,6 +18116,10 @@ PrefabInstance:
     - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
@@ -19010,6 +19034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -19703,6 +19731,10 @@ PrefabInstance:
     - target: {fileID: 1165945658302040, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Greeble_Panel_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165945658302040, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4632786278472936, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
       propertyPath: m_RootOrder
@@ -23514,7 +23546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1494898069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23540,7 +23572,7 @@ BoxCollider:
   m_GameObject: {fileID: 1494898068}
   m_Material: {fileID: 13400000, guid: f2a4fab624ff9bb41a827a3253b66718, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -26175,6 +26207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -26665,6 +26701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Greeble_Panel_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1165945658302040, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4632786278472936, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -26928,6 +26968,10 @@ PrefabInstance:
     - target: {fileID: 1165945658302040, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Greeble_Panel_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165945658302040, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4632786278472936, guid: 978e2ff4a63aae4439b5e73ffcb833b7, type: 3}
       propertyPath: m_RootOrder
@@ -28709,6 +28753,10 @@ PrefabInstance:
     - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Light_Panel_04 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291289434899750, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4499265750778558, guid: 2d8071ec0fa389e439c2c921a50a6334, type: 3}
       propertyPath: m_RootOrder
@@ -31627,7 +31675,7 @@ PrefabInstance:
     - target: {fileID: 4349786653228398868, guid: 8387d138c31ce6a48a415ec3ff9b8b8f,
         type: 3}
       propertyPath: m_Constraints
-      value: 120
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4349786653228398869, guid: 8387d138c31ce6a48a415ec3ff9b8b8f,
         type: 3}
