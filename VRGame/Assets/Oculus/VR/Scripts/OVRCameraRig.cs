@@ -236,10 +236,27 @@ public class OVRCameraRig : MonoBehaviour
 			}
 			else
 			{
-                Vector3 finalLeftPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition);
+                Vector3 finalLeftPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                     + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                      + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                      + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                      + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                      + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                        + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                      + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition)
+                      + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch) - centerEyeAnchor.localPosition);
 				leftHandAnchor.localPosition = (finalLeftPos);
 
-                Vector3 finalRightPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition);
+                Vector3 finalRightPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition) + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition)
+                    + (OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch) - centerEyeAnchor.localPosition);
+
                 rightHandAnchor.localPosition = (finalRightPos);
 
                
